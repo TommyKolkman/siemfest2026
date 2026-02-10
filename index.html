@@ -28,18 +28,54 @@
             </figure>
         </header>
         <main>
-            <h2>Call for donations!</h2>
-            <p><u>We hebben jullie hulp nodig!</u> We willen jullie graag allemaal voorzien van merch en eten en drinken en een mooi aangeklede zaal. <u>Zouden jullie daarvoor vooraf een bijdrage willen doen?</u></p>
-            <p>Niet iedereen wil merch, dus kies hier de juiste optie. MEER GEVEN MAG, GRAAG! Wat overblijft gaat naar <a href="https://www.stichtingngng.nl/" target="_blank">No Guts No Glory.</a></p>
-            <div class="qr-code-holder">
-                <p>Ja, ik kom en wil alleen eten.</p>
-                <img src="images/qr_food_only.png" alt="QR Code voor donaties" class="qr-code">
+            <h2>Dit moeten we van je weten!</h2>
+            <p>Omdat we de zaal graag leuk aankleden, merchandise willen kopen en jullie willen laten eten. We willen daarom van je weten:</p>
+            <div class="poll-container">
+                <div class="poll-name-field">
+                    <label for="poll-name">Naam:</label>
+                    <input type="text" id="poll-name" name="name" required placeholder="Je naam">
+                </div>
+                <div class="poll-options">
+                    <label class="poll-option">
+                        <input type="radio" name="donation" value="no-merch">
+                        <span class="poll-text">Ik hoef geen merchandise!</span>
+                    </label>
+                    <label class="poll-option">
+                        <input type="radio" name="donation" value="merch-single">
+                        <span class="poll-text">Ja, merch, graag, vet!</span>
+                    </label>
+                    <label class="poll-option">
+                        <input type="radio" name="donation" value="merch-family">
+                        <span class="poll-text">Ja, merch voor mij, mijn partner en evt. kid(s)</span>
+                    </label>
+                </div>
+                <button type="button" class="poll-submit-btn" id="poll-submit-btn">Stem versturen</button>
+                <div class="poll-results" id="poll-results" style="display: none;">
+                    <h3>Resultaten:</h3>
+                    <div class="poll-bar-container">
+                        <div class="poll-bar-label">Ik hoef geen merchandise!</div>
+                        <div class="poll-bar">
+                            <div class="poll-bar-fill" id="bar-no-merch" style="width: 0%;"></div>
+                        </div>
+                        <span class="poll-count" id="count-no-merch">0</span>
+                    </div>
+                    <div class="poll-bar-container">
+                        <div class="poll-bar-label">Ja, merch, graag, vet!</div>
+                        <div class="poll-bar">
+                            <div class="poll-bar-fill" id="bar-merch-single" style="width: 0%;"></div>
+                        </div>
+                        <span class="poll-count" id="count-merch-single">0</span>
+                    </div>
+                    <div class="poll-bar-container">
+                        <div class="poll-bar-label">Merch voor mij, partner en evt. kid(s)</div>
+                        <div class="poll-bar">
+                            <div class="poll-bar-fill" id="bar-merch-family" style="width: 0%;"></div>
+                        </div>
+                        <span class="poll-count" id="count-merch-family">0</span>
+                    </div>
+                    <p class="poll-total">Totaal: <span id="poll-total">0</span> stemmen</p>
+                </div>
             </div>
-            <div class="qr-code-holder">
-                <p>Ja, ik kom, wil eten en officiële Siemfest merchandise!</p>      
-                <img src="images/qr_food_merch.png" alt="QR Code voor donaties" class="qr-code">
-            </div>
-            
             <h2>Confirmed acts</h2>
             <ul class="confirmed-acts">
                 <li><a href="https://open.spotify.com/artist/30LkPpPPsmypvbqkdL6PX" target="_blank">Shy Riot Club</a></li>
