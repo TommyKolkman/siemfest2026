@@ -1,0 +1,233 @@
+/* styles */
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #ffeb3b;
+  background-image: 
+    linear-gradient(to bottom, rgba(255, 255, 100, 0.1) 0%, rgba(255, 235, 59, 0.95) 50%, rgba(255, 235, 59, 0.9) 100%),
+    radial-gradient(ellipse at 20% 30%, rgba(255, 255, 120, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 70%, rgba(255, 255, 110, 0.06) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 255, 115, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+  font-family: acumin-variable, "Roboto", sans-serif;
+  font-weight: 600;
+  font-variation-settings: "wdth" 75, "wght" 600;
+  color: rgb(83, 76, 59);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.08) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.05) 3px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.04) 3px,
+      transparent 4px
+    );
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+  filter: url(#noise) blur(0.3px);
+}
+
+.grid-column {
+  max-width: 960px;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: rgb(231, 170, 204);
+  padding: 0.2em 0.3em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.6;
+  transform: rotate(-2deg);
+}
+
+a,
+a:visited {
+  color: rgb(226, 53, 39);
+}
+
+a:hover {
+  color: rgb(240, 95, 85);
+}
+
+main {
+  text-align: center;
+}
+
+.main-image {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.confirmed-acts {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  justify-content: center;
+  margin-bottom: 2.5em;
+}
+
+.confirmed-acts li {
+  display: inline-block;
+  background-color: rgb(226, 53, 39);
+  color: rgb(238, 225, 64);
+  padding: 0.5em;
+  text-transform: uppercase;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.6;
+  font-size: large;
+  transform: rotate(-2deg);
+}
+
+.confirmed-acts li a {
+  color: rgb(238, 225, 64);
+}
+
+.confirmed-acts li a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.confirmed-catering {
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+}
+
+.confirmed-catering-wrapper {
+  display: inline-flex;
+  gap: 1em;
+  animation: ticker 30s linear infinite;
+}
+
+.catering-item {
+  display: inline-block;
+  background-color: rgb(83, 76, 59);
+  color: rgb(255, 255, 255);
+  padding: 0.2em 0.5em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.6;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.schedule {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: table;
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  margin-bottom: 2.5em;
+}
+
+.schedule li {
+  display: table-row;
+}
+
+.schedule-time,
+.schedule-event {
+  display: table-cell;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid rgb(83, 76, 59);
+  text-align: left;
+}
+
+.schedule-time {
+  font-weight: 600;
+  width: 30%;
+}
+
+.schedule-event {
+  width: 70%;
+}
+
+.schedule li:last-child .schedule-time,
+.schedule li:last-child .schedule-event {
+  border-bottom: none;
+}
+
+.qr-code-holder {
+  margin: 2em auto;
+  padding: 1.5em;
+  background-color: rgb(255, 255, 255);
+  border: 3px solid rgb(83, 76, 59);
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  animation: jump 2s ease-in-out infinite;
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.qr-code {
+  display: block;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  margin-top: 1em;
+}
